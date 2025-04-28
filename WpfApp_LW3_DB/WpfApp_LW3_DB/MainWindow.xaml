@@ -1,0 +1,35 @@
+﻿<Window x:Class="WpfApp_LW3_DB.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp_LW3_DB"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="650">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0">
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,0">
+                <Button x:Name="ConnectButton" Content="To connect" Width="100" Margin="0,0,10,0" Click="ConnectButton_Click"/>
+                <Button x:Name="LoadButton" Content="Load data" Width="120" Margin="0, 0, 10, 0" Click="LoadButton_Click" IsEnabled="False"/>
+                <Button x:Name="AddButton" Content="Add data" Width="100" Margin="0, 0, 10, 0" IsEnabled="False" Click="AddButton_Click"/>
+                <Button x:Name="DeleteButton" Content="Delete data" Width="100" IsEnabled="False" Click="DeleteButton_Click"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,10,0,10">
+                <ComboBox x:Name="ComboBox" Width="100">
+                    <ComboBoxItem Content="Farms"/>
+                    <ComboBoxItem Content="Culture"/>
+                    <ComboBoxItem Content="Delivered"/>
+                </ComboBox>
+            </StackPanel>
+        </StackPanel>
+       
+        <DataGrid x:Name="DataGrid" Grid.Row="2" AutoGenerateColumns="True" CellEditEnding="DataGrid_CellEditEnding" />
+    </Grid>
+</Window>
